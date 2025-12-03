@@ -1,4 +1,4 @@
-![Floatanic Panel Logo](https://github.com/TERMZL0ckd0wn/Floatanic/blob/main/floatanic.png)
+<img alt="Floatanic Logo" height="128" width="128" src="https://github.com/TERMZL0ckd0wn/Floatanic/blob/main/floatanic.png"/>
 
 > [!IMPORTANT]  
 > Floatanic is not ready for production yet.
