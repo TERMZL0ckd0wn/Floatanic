@@ -1,4 +1,4 @@
-![Skyport Panel Logo](https://i.imgur.com/SU7QypZ.png)
+![Floatanic Panel Logo](https://github.com/TERMZL0ckd0wn/Floatanic/blob/main/floatanic.png)
 
 > [!IMPORTANT]  
 > Floatanic is not ready for production yet.
@@ -8,6 +8,8 @@
 **Floatanic Panel** is a fork of the open-source Skyport control panel built by the [Skyport Team](https://github.com/skyport-team) for managing game servers and apps using Node.js, Express, and Docker.
 
 It aims to be a simple and efficient solution for hosting and managing instances with a clean web interface and container-based deployment.
+
+This fork also aims for selfhosting. I've removed some features from the original panel such as the Skyport Microtransaction system because that is not needed on a selfhosted environment.
 
 ## Configuration
 
