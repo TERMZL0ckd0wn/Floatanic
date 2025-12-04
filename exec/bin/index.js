@@ -5,8 +5,8 @@ const { Command } = require("commander");
 const program = new Command();
 
 program
-  .version("0.1.0-beta6")
-  .description("Command Line Interface for the Skyport Panel");
+  .version("0.0.1-alpha")
+  .description("Command Line Interface for the Floatanic Panel");
 
 program
   .command("seed")
@@ -38,7 +38,7 @@ program
                 await performSeeding();
                 rl.close();
               }
-            }
+            },
           );
         } else {
           await performSeeding();
@@ -53,7 +53,7 @@ program
     async function performSeeding() {
       try {
         const imagesIndexResponse = await axios.get(
-          "https://raw.githubusercontent.com/skyport-team/images/refs/heads/main/seed/0.1.0-beta2.json"
+          "https://raw.githubusercontent.com/skyport-team/images/refs/heads/main/seed/0.1.0-beta2.json",
         );
         const imageUrls = imagesIndexResponse.data;
         let imageDataArray = [];

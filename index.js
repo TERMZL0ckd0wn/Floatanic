@@ -1,18 +1,20 @@
 /*
- *           __                          __
- *      _____/ /____  ______  ____  _____/ /_
- *    / ___/ //_/ / / / __ \/ __ \/ ___/ __/
- *   (__  ) ,< / /_/ / /_/ / /_/ / /  / /_
- *  /____/_/|_|\__, / .___/\____/_/   \__/
- *           /____/_/
+ *  ________ ___       ________  ________  _________  ________  ________   ___  ________
+ * |\  _____\\  \     |\   __  \|\   __  \|\___   ___\\   __  \|\   ___  \|\  \|\   ____\
+ * \ \  \__/\ \  \    \ \  \|\  \ \  \|\  \|___ \  \_\ \  \|\  \ \  \\ \  \ \  \ \  \___|
+ *  \ \   __\\ \  \    \ \  \\\  \ \   __  \   \ \  \ \ \   __  \ \  \\ \  \ \  \ \  \
+ *   \ \  \_| \ \  \____\ \  \\\  \ \  \ \  \   \ \  \ \ \  \ \  \ \  \\ \  \ \  \ \  \____
+ *    \ \__\   \ \_______\ \_______\ \__\ \__\   \ \__\ \ \__\ \__\ \__\\ \__\ \__\ \_______\
+ *     \|__|    \|_______|\|_______|\|__|\|__|    \|__|  \|__|\|__|\|__| \|__|\|__|\|_______|
  *
- *  Skyport Panel 0.3.0 (Oz)
+ *  Floatanic Panel 0.0.1-ALPHA (Seashore)
  *  (c) 2024 Matt James and contributors
+ *  (c) 2025 MxrkD_V (a.k.a. MarkDev/TERMZL0ckd0wn) and contributors
  *
  */
 
 /**
- * @fileoverview Main server file for Skyport Panel. Sets up the express application,
+ * @fileoverview Main server file for Floatanic Panel. Sets up the express application,
  * configures middleware for sessions, body parsing, and websocket enhancements, and dynamically loads route
  * modules. This file also sets up the server to listen on a configured port and initializes logging.
  */
@@ -59,7 +61,7 @@ app.use(
     secret: config.session_secret || "secret",
     resave: true,
     saveUninitialized: true,
-  })
+  }),
 );
 
 /**
@@ -240,12 +242,12 @@ init();
 
 console.log(chalk.gray(ascii) + chalk.white(`version v${config.version}\n`));
 app.listen(config.port, () =>
-  log.info(`Skyport is listening on port ${config.port}`)
+  log.info(`Floatanic is listening on port ${config.port}`),
 );
 
 app.get("*", async function (req, res) {
   res.render("errors/404", {
     req,
-    name: (await db.get("name")) || "Skyport",
+    name: (await db.get("name")) || "Floatanic",
   });
 });

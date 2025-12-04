@@ -4,10 +4,12 @@ const { v4: uuidv4 } = require("uuid");
 const log = new (require("cat-loggr"))();
 
 async function init() {
-  const skyport = await db.get("skyport_instance");
-  if (!skyport) {
-    log.init("This is probably your first time starting Skyport, welcome!");
-    log.init("You can find documentation for the panel at skyport.dev");
+  const floatanic = await db.get("floatanic_instance");
+  if (!floatanic) {
+    log.init("First run detected. Welcome!");
+    log.init(
+      "Use the skyport.dev documentation because code is still based on it.",
+    );
 
     const errorMessages = [];
 
@@ -15,16 +17,13 @@ async function init() {
     let userCheck = await db.get("users");
 
     if (!imageCheck) {
-      errorMessages.push(
-        "Before starting Skyport for the first time, you didn't run the seed command!"
-      );
+      errorMessages.push("Can't find images for running instances...");
       errorMessages.push("Please run: npm run seed");
     }
 
     if (!userCheck) {
-      errorMessages.push(
-        "If you didn't do it already, make a user for yourself: npm run createUser"
-      );
+      errorMessages.push("No user detected...");
+      errorMessages.push("Please create one using: npm run createUser ");
     }
 
     if (errorMessages.length > 0) {
@@ -32,17 +31,17 @@ async function init() {
       process.exit();
     }
 
-    const skyportId = uuidv4();
+    const floatanicId = uuidv4();
     const setupTime = Date.now();
 
     const info = {
-      skyportId: skyportId,
+      floatanicId: floatanicId,
       setupTime: setupTime,
       originalVersion: config.version,
     };
 
-    await db.set("skyport_instance", info);
-    log.info("Initialized Skyport panel with ID: " + skyportId);
+    await db.set("floatanic_instance", info);
+    log.info("Floatanic panel ID: " + floatanicId);
   }
   log.info("Init complete!");
 }

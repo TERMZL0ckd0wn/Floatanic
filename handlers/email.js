@@ -1,3 +1,5 @@
+// This is going to be deprecated later since im not going to use this.
+
 const nodemailer = require("nodemailer");
 const { db } = require("./db.js");
 const config = require("../config.json");

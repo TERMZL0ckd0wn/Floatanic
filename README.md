@@ -9,7 +9,7 @@
 
 It aims to be a simple and efficient solution for hosting and managing instances with a clean web interface and container-based deployment.
 
-This fork also aims for selfhosting. I've removed some features from the original panel such as the Skyport Microtransaction system because that is not needed on a selfhosted environment.
+This fork also aims for selfhosting. I've removed some features from the original panel that is not needed on a selfhosted environment.
 
 ## Configuration
 

@@ -25,7 +25,7 @@ async function seed() {
             await performSeeding();
             rl.close();
           }
-        }
+        },
       );
     } else {
       await performSeeding();
@@ -40,7 +40,7 @@ async function seed() {
 async function performSeeding() {
   try {
     const imagesIndexResponse = await axios.get(
-      "https://raw.githubusercontent.com/skyport-team/images/refs/heads/main/seed/0.1.0-beta2.json"
+      "https://raw.githubusercontent.com/TERMZL0ckd0wn/FloatanicImages/refs/heads/main/seed/0.1.0-beta2.json",
     );
     const imageUrls = imagesIndexResponse.data;
     let imageDataArray = [];
